@@ -1,6 +1,6 @@
 # 🛺 Nimma Yatri - Bengaluru Auto-Rickshaw Survival Tool
 
-> Your AI-powered companion for navigating Bengaluru's auto-rickshaw negotiations with confidence
+> Your AI-powered companion for navigating Bengaluru's auto-rickshaw negotiations with confidence built for fun
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-success?style=for-the-badge&logo=vercel)](https://nimmayatri.vercel.app)
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/harshendram/nimmayatri)
