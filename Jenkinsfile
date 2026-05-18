@@ -1,0 +1,93 @@
+pipeline {
+    agent any
+
+    tools {
+        nodejs 'Node18'
+    }
+
+    environment {
+        IMAGE_NAME = "suicide768/nimmayatri-app"
+        IMAGE_TAG = "${env.BUILD_NUMBER}"
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                url: 'https://github.com/harshendram/Devops_Lab_Assign.git'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                bat 'npm install'
+            }
+        }
+
+        stage('ESLint Check') {
+            steps {
+                bat 'npm run lint'
+            }
+        }
+
+        stage('Build Next.js App') {
+            steps {
+                bat 'npm run build'
+            }
+        }
+
+        stage('Trivy Filesystem Scan') {
+            steps {
+                bat 'trivy fs . > trivy-fs-report.txt'
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                bat "docker build -t ${env.IMAGE_NAME}:${env.IMAGE_TAG} -t ${env.IMAGE_NAME}:latest ."
+            }
+        }
+
+        stage('Trivy Docker Image Scan') {
+            steps {
+                bat "trivy image ${env.IMAGE_NAME}:${env.IMAGE_TAG} > trivy-image-report.txt"
+            }
+        }
+
+        stage('Docker Hub Login') {
+            steps {
+                withCredentials([usernamePassword(
+                    credentialsId: 'dockerhub-creds',
+                    usernameVariable: 'DOCKER_USER',
+                    passwordVariable: 'DOCKER_PASS'
+                )]) {
+
+                    bat 'echo %DOCKER_PASS% | docker login -u %DOCKER_USER% --password-stdin'
+                }
+            }
+        }
+
+        stage('Docker Push') {
+            steps {
+                bat "docker push ${env.IMAGE_NAME}:${env.IMAGE_TAG}"
+                bat "docker push ${env.IMAGE_NAME}:latest"
+            }
+        }
+    }
+
+    post {
+
+        always {
+            archiveArtifacts artifacts: 'trivy-*.txt', allowEmptyArchive: true
+        }
+
+        success {
+            echo 'Pipeline executed successfully!'
+        }
+
+        failure {
+            echo 'Pipeline failed!'
+        }
+    }
+}
