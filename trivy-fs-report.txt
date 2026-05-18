@@ -1,0 +1,124 @@
+
+Report Summary
+
+┌───────────────────┬──────┬─────────────────┬─────────┐
+│      Target       │ Type │ Vulnerabilities │ Secrets │
+├───────────────────┼──────┼─────────────────┼─────────┤
+│ package-lock.json │ npm  │       28        │    -    │
+└───────────────────┴──────┴─────────────────┴─────────┘
+Legend:
+- '-': Not scanned
+- '0': Clean (no security findings detected)
+
+
+package-lock.json (npm)
+=======================
+Total: 28 (UNKNOWN: 0, LOW: 4, MEDIUM: 14, HIGH: 9, CRITICAL: 1)
+
+┌───────────┬─────────────────────┬──────────┬────────┬───────────────────┬────────────────────────────────────────────────────────────┬──────────────────────────────────────────────────────────────┐
+│  Library  │    Vulnerability    │ Severity │ Status │ Installed Version │                       Fixed Version                        │                            Title                             │
+├───────────┼─────────────────────┼──────────┼────────┼───────────────────┼────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ next      │ CVE-2025-29927      │ CRITICAL │ fixed  │ 14.2.21           │ 13.5.9, 14.2.25, 15.2.3, 12.3.5                            │ nextjs: Authorization Bypass in Next.js Middleware           │
+│           │                     │          │        │                   │                                                            │ https://avd.aquasec.com/nvd/cve-2025-29927                   │
+│           ├─────────────────────┼──────────┤        │                   ├────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│           │ CVE-2026-44573      │ HIGH     │        │                   │ 15.5.16, 16.2.5                                            │ Next.js has a Middleware / Proxy bypass in Pages Router      │
+│           │                     │          │        │                   │                                                            │ applications using...                                        │
+│           │                     │          │        │                   │                                                            │ https://avd.aquasec.com/nvd/cve-2026-44573                   │
+│           ├─────────────────────┤          │        │                   │                                                            ├──────────────────────────────────────────────────────────────┤
+│           │ CVE-2026-44578      │          │        │                   │                                                            │ Next.js vulnerable to server-side request forgery in         │
+│           │                     │          │        │                   │                                                            │ applications using WebSocket upgrades                        │
+│           │                     │          │        │                   │                                                            │ https://avd.aquasec.com/nvd/cve-2026-44578                   │
+│           ├─────────────────────┤          │        │                   ├────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│           │ GHSA-5j59-xgg2-r9c4 │          │        │                   │ 14.2.35, 15.0.7, 15.1.11, 15.2.8, 15.3.8, 15.4.10, 15.5.9, │ Next has a Denial of Service with Server Components -        │
+│           │                     │          │        │                   │ 15.6.0-canary.60, 16.0.10, 16.1.0-canary.19                │ Incomplete Fix...                                            │
+│           │                     │          │        │                   │                                                            │ https://github.com/advisories/GHSA-5j59-xgg2-r9c4            │
+│           ├─────────────────────┤          │        │                   ├────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│           │ GHSA-8h8q-6873-q5fj │          │        │                   │ 15.5.16, 16.2.5                                            │ Next.js Vulnerable to Denial of Service with Server          │
+│           │                     │          │        │                   │                                                            │ Components                                                   │
+│           │                     │          │        │                   │                                                            │ https://github.com/advisories/GHSA-8h8q-6873-q5fj            │
+│           ├─────────────────────┤          │        │                   ├────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│           │ GHSA-h25m-26qc-wcjf │          │        │                   │ 15.0.8, 15.1.12, 15.2.9, 15.3.9, 15.4.11, 15.5.10,         │ Next.js HTTP request deserialization can lead to DoS when    │
+│           │                     │          │        │                   │ 15.6.0-canary.61, 16.0.11, 16.1.5                          │ using insecure React...                                      │
+│           │                     │          │        │                   │                                                            │ https://github.com/advisories/GHSA-h25m-26qc-wcjf            │
+│           ├─────────────────────┤          │        │                   ├────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│           │ GHSA-mwv6-3258-q52c │          │        │                   │ 14.2.34, 15.0.6, 15.1.10, 15.2.7, 15.3.7, 15.4.9, 15.5.8,  │ Next Vulnerable to Denial of Service with Server Components  │
+│           │                     │          │        │                   │ 15.6.0-canary.59, 16.0.9, 16.1.0-canary.17                 │ https://github.com/advisories/GHSA-mwv6-3258-q52c            │
+│           ├─────────────────────┤          │        │                   ├────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│           │ GHSA-q4gf-8mx6-v5v3 │          │        │                   │ 15.5.15, 16.2.3                                            │ Next.js has a Denial of Service with Server Components       │
+│           │                     │          │        │                   │                                                            │ https://github.com/advisories/GHSA-q4gf-8mx6-v5v3            │
+│           ├─────────────────────┼──────────┤        │                   ├────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│           │ CVE-2025-55173      │ MEDIUM   │        │                   │ 14.2.31, 15.4.5                                            │ nextjs: Next.js Content Injection Vulnerability for Image    │
+│           │                     │          │        │                   │                                                            │ Optimization                                                 │
+│           │                     │          │        │                   │                                                            │ https://avd.aquasec.com/nvd/cve-2025-55173                   │
+│           ├─────────────────────┤          │        │                   │                                                            ├──────────────────────────────────────────────────────────────┤
+│           │ CVE-2025-57752      │          │        │                   │                                                            │ nextjs: Next.js Affected by Cache Key Confusion for Image    │
+│           │                     │          │        │                   │                                                            │ Optimization API Routes...                                   │
+│           │                     │          │        │                   │                                                            │ https://avd.aquasec.com/nvd/cve-2025-57752                   │
+│           ├─────────────────────┤          │        │                   ├────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│           │ CVE-2025-57822      │          │        │                   │ 14.2.32, 15.4.7                                            │ Next.js Improper Middleware Redirect Handling Leads to SSRF  │
+│           │                     │          │        │                   │                                                            │ https://avd.aquasec.com/nvd/cve-2025-57822                   │
+│           ├─────────────────────┤          │        │                   ├────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│           │ CVE-2025-59471      │          │        │                   │ 15.5.10, 16.1.5                                            │ next: NextJS Denial of Service in Image Optimizer            │
+│           │                     │          │        │                   │                                                            │ https://avd.aquasec.com/nvd/cve-2025-59471                   │
+│           ├─────────────────────┤          │        │                   ├────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│           │ CVE-2026-27980      │          │        │                   │ 16.1.7, 15.5.14                                            │ next.js: Next.js: Unbounded next/image disk cache growth can │
+│           │                     │          │        │                   │                                                            │ exhaust storage                                              │
+│           │                     │          │        │                   │                                                            │ https://avd.aquasec.com/nvd/cve-2026-27980                   │
+│           ├─────────────────────┤          │        │                   ├────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│           │ CVE-2026-29057      │          │        │                   │ 16.1.7, 15.5.13                                            │ next.js: Next.js: HTTP request smuggling in rewrites         │
+│           │                     │          │        │                   │                                                            │ https://avd.aquasec.com/nvd/cve-2026-29057                   │
+│           ├─────────────────────┤          │        │                   ├────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│           │ CVE-2026-44576      │          │        │                   │ 15.5.16, 16.2.5                                            │ Next.js vulnerable to cache poisoning in React Server        │
+│           │                     │          │        │                   │                                                            │ Component responses                                          │
+│           │                     │          │        │                   │                                                            │ https://avd.aquasec.com/nvd/cve-2026-44576                   │
+│           ├─────────────────────┤          │        │                   │                                                            ├──────────────────────────────────────────────────────────────┤
+│           │ CVE-2026-44577      │          │        │                   │                                                            │ Next.js has a Denial of Service in the Image Optimization    │
+│           │                     │          │        │                   │                                                            │ API                                                          │
+│           │                     │          │        │                   │                                                            │ https://avd.aquasec.com/nvd/cve-2026-44577                   │
+│           ├─────────────────────┤          │        │                   │                                                            ├──────────────────────────────────────────────────────────────┤
+│           │ CVE-2026-44580      │          │        │                   │                                                            │ Next.js has cross-site scripting in beforeInteractive        │
+│           │                     │          │        │                   │                                                            │ scripts with untrusted input                                 │
+│           │                     │          │        │                   │                                                            │ https://avd.aquasec.com/nvd/cve-2026-44580                   │
+│           ├─────────────────────┤          │        │                   │                                                            ├──────────────────────────────────────────────────────────────┤
+│           │ CVE-2026-44581      │          │        │                   │                                                            │ Next.js vulnerable to cross-site scripting in App Router     │
+│           │                     │          │        │                   │                                                            │ applications using CSP nonces...                             │
+│           │                     │          │        │                   │                                                            │ https://avd.aquasec.com/nvd/cve-2026-44581                   │
+│           ├─────────────────────┼──────────┤        │                   ├────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│           │ CVE-2025-32421      │ LOW      │        │                   │ 14.2.24, 15.1.6                                            │ next.js: Next.js Race Condition to Cache Poisoning           │
+│           │                     │          │        │                   │                                                            │ https://avd.aquasec.com/nvd/cve-2025-32421                   │
+│           ├─────────────────────┤          │        │                   ├────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│           │ CVE-2025-48068      │          │        │                   │ 15.2.2, 14.2.30                                            │ next.js: Information exposure in Next.js dev server due to   │
+│           │                     │          │        │                   │                                                            │ lack of origin...                                            │
+│           │                     │          │        │                   │                                                            │ https://avd.aquasec.com/nvd/cve-2025-48068                   │
+│           ├─────────────────────┤          │        │                   ├────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│           │ CVE-2026-44572      │          │        │                   │ 15.5.16, 16.2.5                                            │ Next.js's Middleware / Proxy redirects can be cache-poisoned │
+│           │                     │          │        │                   │                                                            │ https://avd.aquasec.com/nvd/cve-2026-44572                   │
+│           ├─────────────────────┤          │        │                   │                                                            ├──────────────────────────────────────────────────────────────┤
+│           │ CVE-2026-44582      │          │        │                   │                                                            │ Next.js vulnerable to cache poisoning via collisions in      │
+│           │                     │          │        │                   │                                                            │ React Server Component cache-busting...                      │
+│           │                     │          │        │                   │                                                            │ https://avd.aquasec.com/nvd/cve-2026-44582                   │
+├───────────┼─────────────────────┼──────────┤        ├───────────────────┼────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ picomatch │ CVE-2026-33671      │ HIGH     │        │ 2.3.1             │ 4.0.4, 3.0.2, 2.3.2                                        │ picomatch: Picomatch: Regular Expression Denial of Service   │
+│           │                     │          │        │                   │                                                            │ via crafted extglob patterns                                 │
+│           │                     │          │        │                   │                                                            │ https://avd.aquasec.com/nvd/cve-2026-33671                   │
+│           ├─────────────────────┼──────────┤        │                   │                                                            ├──────────────────────────────────────────────────────────────┤
+│           │ CVE-2026-33672      │ MEDIUM   │        │                   │                                                            │ picomatch: Picomatch: Data integrity compromised via method  │
+│           │                     │          │        │                   │                                                            │ injection with crafted POSIX bracket...                      │
+│           │                     │          │        │                   │                                                            │ https://avd.aquasec.com/nvd/cve-2026-33672                   │
+│           ├─────────────────────┼──────────┤        ├───────────────────┤                                                            ├──────────────────────────────────────────────────────────────┤
+│           │ CVE-2026-33671      │ HIGH     │        │ 4.0.3             │                                                            │ picomatch: Picomatch: Regular Expression Denial of Service   │
+│           │                     │          │        │                   │                                                            │ via crafted extglob patterns                                 │
+│           │                     │          │        │                   │                                                            │ https://avd.aquasec.com/nvd/cve-2026-33671                   │
+│           ├─────────────────────┼──────────┤        │                   │                                                            ├──────────────────────────────────────────────────────────────┤
+│           │ CVE-2026-33672      │ MEDIUM   │        │                   │                                                            │ picomatch: Picomatch: Data integrity compromised via method  │
+│           │                     │          │        │                   │                                                            │ injection with crafted POSIX bracket...                      │
+│           │                     │          │        │                   │                                                            │ https://avd.aquasec.com/nvd/cve-2026-33672                   │
+├───────────┼─────────────────────┤          │        ├───────────────────┼────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ postcss   │ CVE-2026-41305      │          │        │ 8.4.31            │ 8.5.10                                                     │ postcss: PostCSS: Cross-Site Scripting (XSS) via improper    │
+│           │                     │          │        │                   │                                                            │ escaping of style closing tags...                            │
+│           │                     │          │        │                   │                                                            │ https://avd.aquasec.com/nvd/cve-2026-41305                   │
+│           │                     │          │        ├───────────────────┤                                                            │                                                              │
+│           │                     │          │        │ 8.5.6             │                                                            │                                                              │
+│           │                     │          │        │                   │                                                            │                                                              │
+│           │                     │          │        │                   │                                                            │                                                              │
+└───────────┴─────────────────────┴──────────┴────────┴───────────────────┴────────────────────────────────────────────────────────────┴──────────────────────────────────────────────────────────────┘

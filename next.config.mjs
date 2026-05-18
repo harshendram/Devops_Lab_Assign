@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["maps.googleapis.com"],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'maps.googleapis.com',
+      },
+    ],
   },
   // Optimize for production
   swcMinify: true,
@@ -44,6 +49,7 @@ const nextConfig = {
       process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
     GEMINI_API_KEY: process.env.GEMINI_API_KEY,
   },
+  output: "standalone",
 };
 
 export default nextConfig;
